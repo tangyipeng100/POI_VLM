@@ -28,9 +28,7 @@ or [watch the narrated paper presentation](media/poi_vlm_presentation_narrated_s
 
 ## Contents
 
-- [Research Wiki](wiki.html): method, evidence, limitations, and project summary.
 - [Continuous decision trace](media/poi_vlm_continuous_decisions.mp4): 150 ordered night-route frames with the front POIs and top-down route view.
-- [Narrated paper presentation](media/poi_vlm_presentation_narrated_subtitled.mp4): the 720p narrated and subtitled paper walkthrough.
 - [Night-150 dataset note](dataset/night_150/README.md): the coordinate-free metadata slice and preview images.
 - [Annotation tool guide](annotation_app/README.md): the local browser labeler.
 
