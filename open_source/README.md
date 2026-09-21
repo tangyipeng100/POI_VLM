@@ -39,11 +39,7 @@ or [watch the narrated paper presentation](media/poi_vlm_presentation_narrated_s
 - `inference_bridge.py`: a provider-neutral bridge for sending a composed question image to an OpenAI-compatible VLM endpoint.
 - `tests/`: focused tests for the reusable core and inference bridge.
 - `dataset/night_150/`: 150 ordered metadata records, sanitized decisions, and 18 preview images. No coordinates or provider map tiles are included.
-- `media/`: the two-panel continuous decision trace and narrated paper presentation.
 - `annotation_app/` and `annotation_server.py`: a local-only browser labeler with POI, rotate, skip, confidence, notes, sample navigation, and CSV export.
-- `paper_snapshot.md`: a compact research and evaluation snapshot. The full manuscript and editable paper sources are intentionally not included.
-- `tools/`: the public-slice builder, decision-video renderer, and metadata sanitizer used to assemble the package.
-- `LICENSE`, `CITATION.cff`, `PUBLICATION.md`, and `LICENSE_POLICY.md`.
 
 ## Runnable examples
 
