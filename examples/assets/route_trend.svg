@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract route trend</title>
+  <desc id="desc">A redacted top-down route with passed and remaining segments.</desc>
+  <rect width="900" height="420" fill="#f4f6f8"/>
+  <path d="M70 325 C160 300 165 210 245 205 S350 260 430 210 S540 95 640 125 S745 210 830 82" fill="none" stroke="#7d899a" stroke-width="13" stroke-linecap="round"/>
+  <path d="M430 210 S540 95 640 125 S745 210 830 82" fill="none" stroke="#276fe8" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="430" cy="210" r="20" fill="#f3a63b" stroke="#0b1833" stroke-width="7"/>
+  <circle cx="70" cy="325" r="14" fill="#35a977" stroke="#0b1833" stroke-width="5"/>
+  <circle cx="830" cy="82" r="14" fill="#ef7564" stroke="#0b1833" stroke-width="5"/>
+  <path d="M525 125 l32 13 -24 23" fill="none" stroke="#35a977" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#0b1833" font-family="Arial, sans-serif" font-size="22" font-weight="700">
+    <text x="48" y="370">START</text><text x="790" y="54">GOAL</text><text x="394" y="260">CURRENT</text>
+  </g>
+  <g fill="#5c6b83" font-family="Courier New, monospace" font-size="18">
+    <text x="54" y="40">REDACTED ROUTE TREND / NO GEOGRAPHIC COORDINATES</text>
+  </g>
+</svg>

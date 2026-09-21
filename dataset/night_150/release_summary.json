@@ -1,0 +1,14 @@
+{
+  "dataset": "night_150_coordinate_free",
+  "samples": 150,
+  "preview_images": 18,
+  "route_source": "gps_track (progress only)",
+  "excluded": [
+    "raw_image",
+    "mask_image",
+    "GPS coordinates",
+    "provider map tiles",
+    "prompts",
+    "raw model payloads"
+  ]
+}
