@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POI VLM 标注</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>POI VLM 标注</h1>
+      <p id="subtitle">加载中...</p>
+    </div>
+    <div class="top-actions">
+      <button id="previewBtn" type="button">预览剩余</button>
+      <button id="prevBtn" type="button">上一张</button>
+      <button id="nextBtn" type="button">下一张</button>
+      <button id="saveBtn" type="button" class="primary">保存并下一张</button>
+      <a id="csvLink" href="/api/annotations.csv" target="_blank">下载 CSV</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sample-nav">
+      <div class="sample-nav-header">
+        <strong>样本列表</strong>
+        <span id="listSummary">-</span>
+      </div>
+      <div id="sampleStrip" class="sample-list"></div>
+    </aside>
+
+    <section class="image-panel">
+      <div class="image-toolbar">
+        <button id="zoomOutBtn" type="button">-</button>
+        <span id="zoomLabel">100%</span>
+        <button id="zoomInBtn" type="button">+</button>
+        <button id="zoomResetBtn" type="button">重置</button>
+        <button id="zoomFitBtn" type="button">适应宽度</button>
+      </div>
+      <div id="imageViewport" class="image-viewport">
+        <img id="questionImage" alt="标注样本">
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <section class="sample-card">
+        <div class="sample-title">
+          <strong id="sampleId">-</strong>
+          <span id="saveState">未保存</span>
+        </div>
+        <div id="routeMeta" class="meta"></div>
+      </section>
+
+      <section class="control-card">
+        <h2>动作标签</h2>
+        <div class="mode-grid">
+          <label><input type="radio" name="action" value="go_to_poi" checked> 选择 POI</label>
+          <label><input type="radio" name="action" value="rotate"> 原地旋转</label>
+          <label><input type="radio" name="action" value="skip"> 跳过/坏帧</label>
+        </div>
+      </section>
+
+      <section class="control-card" id="poiSection">
+        <h2>POI 编号（可多选）</h2>
+        <div id="poiButtons" class="poi-grid"></div>
+        <div id="poiList" class="poi-list"></div>
+      </section>
+
+      <section class="control-card" id="rotateSection">
+        <h2>旋转</h2>
+        <div class="segmented">
+          <button id="rotLeft" type="button" data-direction="left">左转</button>
+          <button id="rotRight" type="button" data-direction="right">右转</button>
+        </div>
+        <label class="field">
+          角度
+          <input id="rotateAngle" type="number" min="0" max="180" step="5" value="30">
+          <span>度</span>
+        </label>
+        <p class="hint">旋转标签用于前视图已经偏离路线、需要先转向而不是直接前进到某个 POI 的帧。</p>
+      </section>
+
+      <section class="control-card">
+        <h2>质量和备注</h2>
+        <label class="field">
+          置信度
+          <select id="confidence">
+            <option value="high">高</option>
+            <option value="medium" selected>中</option>
+            <option value="low">低</option>
+          </select>
+        </label>
+        <textarea id="note" placeholder="可选备注，比如 POI 遮挡、俯视图异常、需要调 POI 生成等"></textarea>
+      </section>
+
+      <section class="control-card shortcuts">
+        <h2>快捷键</h2>
+        <p><kbd>1-9</kbd> 切换 POI 选择，<kbd>R</kbd> 旋转，<kbd>L</kbd>/<kbd>→</kbd> 右转，<kbd>A</kbd>/<kbd>←</kbd> 左转。</p>
+        <p><kbd>Enter</kbd> 保存并下一张，<kbd>[</kbd>/<kbd>]</kbd> 调角度，<kbd>J</kbd>/<kbd>K</kbd> 切换样本。</p>
+      </section>
+    </aside>
+  </main>
+
+  <div id="previewModal" class="modal" hidden>
+    <div class="modal-backdrop" id="previewBackdrop"></div>
+    <div class="modal-panel">
+      <div class="modal-header">
+        <div>
+          <h2>剩余样本预览</h2>
+          <p id="previewSummary">-</p>
+        </div>
+        <button id="closePreviewBtn" type="button">关闭</button>
+      </div>
+      <div id="previewGrid" class="preview-grid"></div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

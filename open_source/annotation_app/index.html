@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POI / VLM Annotation · 标注工具</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>POI / VLM Annotation <span class="ui-cn">标注工具</span></h1>
+      <p id="subtitle">Loading...</p>
+    </div>
+    <div class="top-actions">
+      <button id="previewBtn" type="button">Preview Remaining</button>
+      <button id="prevBtn" type="button">Previous</button>
+      <button id="nextBtn" type="button">Next</button>
+      <button id="saveBtn" type="button" class="primary">Save & Next</button>
+      <a id="csvLink" href="/api/annotations.csv" target="_blank">Download CSV</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sample-nav">
+      <div class="sample-nav-header">
+        <strong>Sample List</strong>
+        <span id="listSummary">-</span>
+      </div>
+      <div id="sampleStrip" class="sample-list"></div>
+    </aside>
+
+    <section class="image-panel">
+      <div class="image-toolbar">
+        <button id="zoomOutBtn" type="button">-</button>
+        <span id="zoomLabel">100%</span>
+        <button id="zoomInBtn" type="button">+</button>
+        <button id="zoomResetBtn" type="button">Reset</button>
+        <button id="zoomFitBtn" type="button">Fit Width</button>
+      </div>
+      <div id="imageViewport" class="image-viewport">
+        <img id="questionImage" alt="Annotation sample">
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <section class="sample-card">
+        <div class="sample-title">
+          <strong id="sampleId">-</strong>
+          <span id="saveState">Unsaved</span>
+        </div>
+        <div id="routeMeta" class="meta"></div>
+      </section>
+
+      <section class="control-card">
+        <h2>Action Label</h2>
+        <div class="mode-grid">
+          <label><input type="radio" name="action" value="go_to_poi" checked> Select POI</label>
+          <label><input type="radio" name="action" value="rotate"> Rotate in Place</label>
+          <label><input type="radio" name="action" value="skip"> Skip / Bad Frame</label>
+        </div>
+      </section>
+
+      <section class="control-card" id="poiSection">
+        <h2>POI Numbers (Multiple Allowed)</h2>
+        <div id="poiButtons" class="poi-grid"></div>
+        <div id="poiList" class="poi-list"></div>
+      </section>
+
+      <section class="control-card" id="rotateSection">
+        <h2>Rotation</h2>
+        <div class="segmented">
+          <button id="rotLeft" type="button" data-direction="left">Turn Left</button>
+          <button id="rotRight" type="button" data-direction="right">Turn Right</button>
+        </div>
+        <label class="field">
+          Angle
+          <input id="rotateAngle" type="number" min="0" max="180" step="5" value="30">
+          <span>deg</span>
+        </label>
+        <p class="hint">Use the rotation label when the front view is clearly misaligned with the route and the robot should turn before moving toward a POI.</p>
+      </section>
+
+      <section class="control-card">
+        <h2>Quality and Notes</h2>
+        <label class="field">
+          Confidence
+          <select id="confidence">
+            <option value="high">High</option>
+            <option value="medium" selected>Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </label>
+        <textarea id="note" placeholder="Optional notes, e.g., occluded POI, abnormal top-down map, or POI generation issues."></textarea>
+      </section>
+
+      <section class="control-card shortcuts">
+        <h2>Shortcuts</h2>
+        <p><kbd>1-9</kbd> toggle POI selection, <kbd>R</kbd> rotate, <kbd>L</kbd>/<kbd>Right</kbd> turn right, <kbd>A</kbd>/<kbd>Left</kbd> turn left.</p>
+        <p><kbd>Enter</kbd> save and next, <kbd>[</kbd>/<kbd>]</kbd> adjust angle, <kbd>J</kbd>/<kbd>K</kbd> switch samples.</p>
+      </section>
+    </aside>
+  </main>
+
+  <div id="previewModal" class="modal" hidden>
+    <div class="modal-backdrop" id="previewBackdrop"></div>
+    <div class="modal-panel">
+      <div class="modal-header">
+        <div>
+          <h2>Remaining Samples Preview</h2>
+          <p id="previewSummary">-</p>
+        </div>
+        <button id="closePreviewBtn" type="button">Close</button>
+      </div>
+      <div id="previewGrid" class="preview-grid"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

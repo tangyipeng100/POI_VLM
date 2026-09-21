@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+title: "POI-Guided Vision-Language Decision Making for Outdoor Robot Local Navigation"
+message: "Please cite the paper and software when using this release. The publication link will be added after it is available."
+type: software
+authors:
+  - family-names: Tang
+    given-names: Yipeng
+  - family-names: Ye
+    given-names: Qiancheng
+  - family-names: Song
+    given-names: Zhixing
+  - family-names: Jiang
+    given-names: Haoge
+  - family-names: He
+    given-names: Chaochao
+  - family-names: Xu
+    given-names: Zhenyu
+  - family-names: Gao
+    given-names: Jinfei
+  - family-names: Cheng
+    given-names: Baoping
+  - family-names: Huang
+    given-names: Ting
+  - family-names: Pu
+    given-names: Qiran
+version: 0.1.0
+date-released: 2026-09-16
+license: MIT

@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+
+# Local credentials and machine-specific connectivity files.
+api_key.txt
+转发链路.txt
+*.pem
+*.key
+
+# Runtime output and private working material.
+*.log
+tmp/
+chats/
+patent/
+output/
+
+# Raw/derived recordings contain GPS, scene imagery, and provider-specific map data.
+vlm_dataset/
+vlm_dataset_night/
+vlm_dataset_night_150/
+
+# Local browser smoke-test screenshots.
+tmp_chrome_verify/
+shot.png
+open_source/*_smoke.png
+open_source/page_*.png
+open_source/*_desktop.png
+open_source/*_mobile.png
