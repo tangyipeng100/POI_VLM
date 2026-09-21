@@ -1,4 +1,7 @@
-# POI-VLM open-source release
+# POI-Guided Vision-Language Decision Making for Outdoor Robot Local Navigation
+
+An interpretable perception-to-decision interface that turns drivable-area
+geometry and route context into visual, structured VLM actions.
 
 POI-VLM is a compact interface for route-aware local decisions in outdoor
 robotics. A drivable-area mask becomes a small set of numbered polygon POIs;
@@ -7,13 +10,13 @@ structured action that can be inspected by a person and scored frame by frame.
 
 ## Demo video
 
-<video controls preload="metadata" poster="media/poi_vlm_continuous_decisions_poster.jpg" width="960">
-  <source src="media/poi_vlm_continuous_decisions.mp4" type="video/mp4">
-</video>
+<a href="https://github.com/tangyipeng100/POI_VLM/blob/main/open_source/media/poi_vlm_continuous_decisions.mp4">
+  <img src="media/poi_vlm_continuous_decisions_poster.jpg" alt="Play the POI-VLM continuous decision demo" width="960">
+</a>
 
 The demo shows the continuous two-panel decision trace: front-view POIs and
-the corresponding top-down route view. [Open the MP4 directly](media/poi_vlm_continuous_decisions.mp4)
-or [watch the narrated paper presentation](media/poi_vlm_presentation_narrated_subtitled.mp4).
+the corresponding top-down route view. **[Open the demo in GitHub's video viewer](https://github.com/tangyipeng100/POI_VLM/blob/main/open_source/media/poi_vlm_continuous_decisions.mp4)**
+or [download the MP4](media/poi_vlm_continuous_decisions.mp4).
 
 ## Visual overview
 
