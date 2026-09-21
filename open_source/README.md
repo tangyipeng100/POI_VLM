@@ -3,20 +3,13 @@
 An interpretable perception-to-decision interface that turns drivable-area
 geometry and route context into visual, structured VLM actions.
 
+Videos, the narrated PPT presentation, and other visual demonstrations are
+available on the [Project Page](https://tangyipeng100.github.io/POI_VLM/).
+
 POI-VLM is a compact interface for route-aware local decisions in outdoor
 robotics. A drivable-area mask becomes a small set of numbered polygon POIs;
 a route-progress cue adds direction; a vision-language model returns one
 structured action that can be inspected by a person and scored frame by frame.
-
-## Demo video
-
-<a href="https://github.com/tangyipeng100/POI_VLM/blob/main/open_source/media/poi_vlm_continuous_decisions.mp4">
-  <img src="media/poi_vlm_continuous_decisions_poster.jpg" alt="Play the POI-VLM continuous decision demo" width="960">
-</a>
-
-The demo shows the continuous two-panel decision trace: front-view POIs and
-the corresponding top-down route view. **[Open the demo in GitHub's video viewer](https://github.com/tangyipeng100/POI_VLM/blob/main/open_source/media/poi_vlm_continuous_decisions.mp4)**
-or [download the MP4](media/poi_vlm_continuous_decisions.mp4).
 
 ## Visual overview
 
@@ -31,7 +24,6 @@ or [download the MP4](media/poi_vlm_continuous_decisions.mp4).
 
 ## Contents
 
-- [Continuous decision trace](media/poi_vlm_continuous_decisions.mp4): 150 ordered night-route frames with the front POIs and top-down route view.
 - [Night-150 dataset note](dataset/night_150/README.md): the coordinate-free metadata slice and preview images.
 - [Annotation tool guide](annotation_app/README.md): the local browser labeler.
 
