@@ -1,36 +1,46 @@
 # POI-VLM
 
-POI-VLM is a route-aware, point-of-interest-guided interface for evaluating
-vision-language model decisions in outdoor local navigation. A drivable-area
-mask is converted into numbered polygon candidates, a top-down route cue adds
-directional context, and the model returns a constrained action that can be
-inspected frame by frame.
+POI-VLM is a compact interface for route-aware local decisions in outdoor
+robotics. A drivable-area mask becomes a small set of numbered polygon POIs;
+a route-progress cue adds direction; a vision-language model returns one
+structured action that can be inspected by a person and scored frame by frame.
 
-## Public release
+## Project page
 
-The self-contained release package is in [`open_source/`](open_source/):
+**[Open the POI-VLM project page](https://tangyipeng100.github.io/POI_VLM/)**
 
-- [`open_source/index.html`](open_source/index.html): visual project homepage.
-- [`open_source/wiki.html`](open_source/wiki.html): research Wiki with method,
-  evidence, runnable pieces, and release boundaries.
-- [`open_source/README.md`](open_source/README.md): code, POI generation, VLM
-  inference bridge, annotation, paper snapshot, and evaluation notes.
-- [`open_source/media/`](open_source/media/): continuous two-panel decision
-  trace and narrated paper presentation.
-- [`open_source/paper/`](open_source/paper/): current author manuscript and
-  selected figures.
+The page presents the method, continuous two-panel decision trace, narrated
+paper presentation, selected figures, dataset slice, annotation tool, and
+runnable examples in one visual overview.
+
+## Release package
+
+The canonical open-source documentation is
+[`open_source/README.md`](open_source/README.md). It contains the same release
+scope shown on the project page, including:
+
+- polygon POI generation and the bundled offline example;
+- the OpenAI-compatible VLM inference bridge and dry-run commands;
+- the coordinate-free Night-150 metadata slice;
+- the local annotation application;
+- the current paper snapshot, figures, evaluation metrics, and release boundary.
+
+The visual source pages are [`open_source/index.html`](open_source/index.html)
+and [`open_source/wiki.html`](open_source/wiki.html). The `open_source/`
+directory is the self-contained publishable boundary for this repository.
+
+## Repository layout
+
+- `open_source/`: public release package and GitHub Pages source.
+- `paper/`: editable paper sources retained for research work.
+- `scripts/`: dataset preparation and evaluation utilities.
+- `annotation_app/`: local annotation application source.
 
 The package deliberately excludes API keys, raw recordings, exact GPS traces,
 provider-owned map tiles, raw model payloads, and private working records.
 Review image consent, map-provider terms, and publication status before
-redistributing the media or manuscript.
-
-## Repository layout
-
-The parent directories retain the reusable research scripts and editable paper
-sources used to assemble the public package. The publishable boundary is the
-`open_source/` directory; see [`OPEN_SOURCE_RELEASE.md`](OPEN_SOURCE_RELEASE.md)
-for the release map and review checklist.
+redistributing the media or manuscript. See
+[`OPEN_SOURCE_RELEASE.md`](OPEN_SOURCE_RELEASE.md) for the release map.
 
 ## License
 
