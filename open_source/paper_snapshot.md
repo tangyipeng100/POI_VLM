@@ -43,11 +43,8 @@ closed-loop navigation, or physical safety.
 
 ### Materials
 
-- [Current author manuscript](paper/manuscript.md)
-- [Selected paper figures](paper/figures/)
 - [Publication link placeholder](PUBLICATION.md)
 
-The manuscript copy is the current author release snapshot. Editable source
-figures, raw recordings, exact route data, and internal annotation exports are
-intentionally excluded from this public folder and remain subject to separate
-privacy, rights, and venue review.
+The full manuscript, editable source figures, raw recordings, exact route data,
+and internal annotation exports are intentionally excluded from this public
+release and remain subject to separate privacy, rights, and venue review.

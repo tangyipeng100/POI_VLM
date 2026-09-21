@@ -5,6 +5,27 @@ robotics. A drivable-area mask becomes a small set of numbered polygon POIs;
 a route-progress cue adds direction; a vision-language model returns one
 structured action that can be inspected by a person and scored frame by frame.
 
+## Demo video
+
+<video controls preload="metadata" poster="media/poi_vlm_continuous_decisions_poster.jpg" width="960">
+  <source src="media/poi_vlm_continuous_decisions.mp4" type="video/mp4">
+</video>
+
+The demo shows the continuous two-panel decision trace: front-view POIs and
+the corresponding top-down route view. [Open the MP4 directly](media/poi_vlm_continuous_decisions.mp4)
+or [watch the narrated paper presentation](media/poi_vlm_presentation_narrated_subtitled.mp4).
+
+## Visual overview
+
+<p align="center">
+  <img src="assets/framework.jpg" alt="POI-VLM framework overview" width="860">
+</p>
+
+<p align="center">
+  <img src="assets/question.png" alt="Composed front-view and route-view question" width="430">
+  <img src="assets/accuracy.png" alt="Offline action accuracy comparison" width="430">
+</p>
+
 ## Contents
 
 - [Research Wiki](wiki.html): method, evidence, limitations, and project summary.
@@ -22,7 +43,7 @@ structured action that can be inspected by a person and scored frame by frame.
 - `dataset/night_150/`: 150 ordered metadata records, sanitized decisions, and 18 preview images. No coordinates or provider map tiles are included.
 - `media/`: the two-panel continuous decision trace and narrated paper presentation.
 - `annotation_app/` and `annotation_server.py`: a local-only browser labeler with POI, rotate, skip, confidence, notes, sample navigation, and CSV export.
-- `paper_snapshot.md` and `paper/`: the current paper snapshot, manuscript, and selected figures.
+- `paper_snapshot.md`: a compact research and evaluation snapshot. The full manuscript and editable paper sources are intentionally not included.
 - `tools/`: the public-slice builder, decision-video renderer, and metadata sanitizer used to assemble the package.
 - `LICENSE`, `CITATION.cff`, `PUBLICATION.md`, and `LICENSE_POLICY.md`.
 

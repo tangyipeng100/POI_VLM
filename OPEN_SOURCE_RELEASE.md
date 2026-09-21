@@ -10,7 +10,7 @@ the working archive.
 ## Publish now
 
 The publish-now tier is self-contained under `open_source/`. It includes the
-clean polygon POI core, tests, the paper snapshot, citation/license metadata,
+clean polygon POI core, tests, the evaluation snapshot, citation/license metadata,
 the visual homepage, the Research Wiki, the local annotation app, and the
 portable release scripts. There is no one-command demo in this package; the
 maintained first-look artifacts are the continuous decision trace and narrated
@@ -27,11 +27,9 @@ generation and `open_source/inference_bridge.py` for optional
 OpenAI-compatible VLM calls. Both examples use relative paths and contain no
 credentials.
 
-The current author manuscript and selected figures have also been copied into
-`open_source/paper/` so they can be reviewed in place. The parent `paper/`
-directory remains the editable working source and is not the path to publish;
-use the local copy only after the manuscript, figure rights, and venue policy
-are cleared.
+The manuscript and editable paper source directories are intentionally omitted
+from this repository. The release keeps only the compact evaluation snapshot,
+selected public-facing assets, and publication placeholder.
 
 ## Publish after preprocessing
 
@@ -53,10 +51,6 @@ are cleared.
   includes rendered route/map context, both video files remain review-required.
 - `open_source/annotation_app/` and `open_source/annotation_server.py` are a
   local-only labeler and portable server for the preview slice.
-- `open_source/paper/manuscript.md` and `open_source/paper/figures/` are the
-  local author snapshot. Treat the manuscript as venue-review material and
-  every recorded or route-derived figure as review-required until publication
-  and image rights are confirmed.
 - `open_source/assets/` contains visual assets used by the homepage and Wiki;
   review those files together with the paper figures before enabling the pages
   in a public deployment.
@@ -92,11 +86,10 @@ traditional navigation stack.
 1. Confirm the MIT code license and the intended CC BY content license.
 2. Clear the redacted demo image, homepage/Wiki visual assets, and any future
    figure/data assets.
-3. Confirm the copied manuscript matches the venue-approved author version.
-4. Run `open_source/tools/sanitize_release.py` on any candidate JSONL files.
-5. Run a secret scan and verify that no API key, endpoint credential, raw GPS,
+3. Run `open_source/tools/sanitize_release.py` on any candidate JSONL files.
+4. Run a secret scan and verify that no API key, endpoint credential, raw GPS,
    or absolute user path remains in the staged tree.
-6. Add the final publication URL in `open_source/PUBLICATION.md`.
+5. Add the final publication URL in `open_source/PUBLICATION.md`.
 
 The static release pages are [open_source/index.html](open_source/index.html)
 and [open_source/wiki.html](open_source/wiki.html). The exact path lists are
